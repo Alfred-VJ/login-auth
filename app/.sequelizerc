@@ -1,0 +1,73 @@
+import path from 'path';
+
+module.exports = {
+  development: {
+    dialect: 'postgres',
+    username: 'postgres',
+    password: '1234',
+    database: 'bd_node_users',
+    host: '127.0.0.1',
+    port: 5432,
+    define: {
+      underscored: true,
+      timestamps: true,
+      createdAt: 'created_at',
+      updatedAt: 'updated_at',
+    },
+    pool: {
+      max: 10,
+      min: 0,
+      acquire: 30000,
+      idle: 10000,
+    },
+    models: path.resolve(__dirname, 'models'),
+    migrations: path.resolve(__dirname, 'migrations'),
+    seeds: path.resolve(__dirname, 'seeds'),
+  },
+  test: {
+    dialect: 'postgres',
+    username: 'postgres',
+    password: 'password',
+    database: 'users_login_test',
+    host: '127.0.0.1',
+    port: 5432,
+    define: {
+      underscored: true,
+      timestamps: true,
+      createdAt: 'created_at',
+      updatedAt: 'updated_at',
+    },
+    pool: {
+      max: 10,
+      min: 0,
+      acquire: 30000,
+      idle: 10000,
+    },
+    models: path.resolve(__dirname, 'models'),
+    migrations: path.resolve(__dirname, 'migrations'),
+    seeds: path.resolve(__dirname, 'seeds'),
+  },
+  production: {
+    dialect: 'postgres',
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    host: process.env.DB_HOSTNAME,
+    port: process.env.DB_PORT,
+    define: {
+      underscored: true,
+      timestamps: true,
+      createdAt: 'created_at',
+      updatedAt: 'updated_at',
+    },
+    pool: {
+      max: 10,
+      min: 0,
+      acquire: 30000,
+      idle: 10000,
+    },
+    models: path.resolve(__dirname, 'models'),
+    migrations: path.resolve(__dirname, 'migrations'),
+    seeds: path.resolve(__dirname, 'seeds'),
+  }
+}
