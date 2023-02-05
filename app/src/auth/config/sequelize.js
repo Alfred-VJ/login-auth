@@ -22,12 +22,6 @@ const sequelize = new Sequelize(
 Role(sequelize); 
 User(sequelize); 
 
-const userModels = sequelize.models.User;
-const roleModels = sequelize.models.Role;
-
-// userModels.belongsToMany(Role, {trough: 'userRole'});
-// roleModels.belongsToMany(User, {trough: 'userRole'});
-
 
 export const DB = {
   ...sequelize.models,

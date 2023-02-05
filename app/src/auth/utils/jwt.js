@@ -2,28 +2,9 @@ import jwt from 'jsonwebtoken';
 const jwtSecret = process.env.JWT_SECRET
 
 export function signToken(user) {
-    return jwt.sign({ user }, jwtSecret, { expiresIn: '60m' });
+    return jwt.sign({ user }, jwtSecret, { expiresIn: '1d' });
 }
 
-// export function verifyToken(req, res, next) {
-//     const token = req.headers['x-access-token'];
-//     if (!token) {
-//         return res.status(401).json({
-//             success: false,
-//             message: 'No token provided'
-//         });
-//     }
-//     jwt.verify(token, jwtSecret, (err, decoded) => {
-//         if (err) {
-//             return res.status(401).json({
-//                 success: false,
-//                 message: 'Failed to authenticate token'
-//             });
-//         }
-//         req.decoded = decoded;
-//         next();
-//     });
-// }
 
 /*
 

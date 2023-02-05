@@ -5,7 +5,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 export const verifyToken = async (req, res, next) => {
   try {
     const { authorization } = req.headers;
-
+console.log({authorization})
     if (!authorization) {
       return res.status(401).json({
         message: 'Token not provided'
@@ -13,7 +13,8 @@ export const verifyToken = async (req, res, next) => {
     }
 
     const token = authorization.replace('Bearer ', '');
-    const decoded = jwt.verify(token, JWT_SECRET);//without await
+    const decoded = jwt.verify(token, JWT_SECRET);
+    console.log({decoded})
     const user = await DB.User.findByPk(decoded.user.uuid);
 
     if (!user) {
