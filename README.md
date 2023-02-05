@@ -3,12 +3,12 @@
 
 ## Características Principales
 
-*Roles de usuario: administrador, moderador, usuario y invitado
-*Prioridad de roles: administrador, moderador, usuario, invitado
-*Autenticación mediante JWT
-*Protección de contraseñas con hash
-*Base de datos: PostgreSQL
-*ORM: Sequelize
+* Roles de usuario: administrador, moderador, usuario y invitado
+* Prioridad de roles: administrador, moderador, usuario, invitado
+* Autenticación mediante JWT
+* Protección de contraseñas con hash
+* Base de datos: PostgreSQL
+* ORM: Sequelize
 *Transpilación con Babel
 **************************************************************************
 
